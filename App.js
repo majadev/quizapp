@@ -1,23 +1,35 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
+import QuestionList from './src/components/QuestionList';
 
 export default class App extends React.Component {
+
+  _onPressLearnMore() {
+    Alert.alert('on Press!');
+   }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Text>Welcome To</Text>
+        <Text>ComboQuiz</Text>
+        <Button   
+          onPress={this._onPressLearnMore}
+          title="START QUIZ"
+          color="#841584"
+          accessibilityLabel="Start quiz with this button"
+        />
+        <QuestionList />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+};
