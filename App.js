@@ -1,35 +1,50 @@
-import React from 'react';
-import { Text, View, Button, Image } from 'react-native';
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import { Router, Scene } from 'react-native-router-flux';
+import Start from './src/components/Start';
 import QuestionList from './src/components/QuestionList';
+import Help from './src/components/Help';
 
-export default class App extends React.Component {
-
-  _onPressLearnMore() {
-    Alert.alert('on Press!');
-   }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Welcome To</Text>
-        <Text>ComboQuiz</Text>
-        <Button   
-          onPress={this._onPressLearnMore}
-          title="START QUIZ"
-          color="#841584"
-          accessibilityLabel="Start quiz with this button"
+const App = () => {
+  return (
+    <Router>
+      <Scene key="root">
+        <Scene key="start"
+          component={Start}
+          title="ComboQuiz"
+          initial
         />
-        <QuestionList />
-      </View>
-    );
-  }
+        <Scene
+          key="question"
+          component={QuestionList}
+          title="Question"
+        />
+        <Scene
+          key="help"
+          component={Help}
+          title="Help"
+        />
+      </Scene>
+    </Router>
+  );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#009688',
   },
-};
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+});
+
+export default App;
