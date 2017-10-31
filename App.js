@@ -21,7 +21,7 @@ const App = () => {
         <Scene
           key="question"
           component={QuestionList}
-          title="Question"
+          title="ComboQuiz"
         />
         <Scene
           key="help"

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Animated } from 'react-native';
 import Animation from 'lottie-react-native';
  
-export default class Spinner extends React.Component {
+export default class Crown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ export default class Spinner extends React.Component {
   componentDidMount() {
     Animated.timing(this.state.progress, {
       toValue: 1,
-      duration: 1000,
+      duration: 2000,
     }).start();
   }
  
@@ -24,7 +24,7 @@ export default class Spinner extends React.Component {
           width: 200,
           height: 200,
         }}
-        source={require('./loading_animation.json')}
+        source={require('./star.json')}
         progress={this.state.progress}
       />
     );

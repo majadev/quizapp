@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Animated } from 'react-native';
 import Animation from 'lottie-react-native';
  
-export default class Spinner extends React.Component {
+export default class Shrug extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,10 +21,10 @@ export default class Spinner extends React.Component {
     return (
       <Animation
         style={{
-          width: 200,
-          height: 200,
+          width: 100,
+          height: 60,
         }}
-        source={require('./loading_animation.json')}
+        source={require('./shrug.json')}
         progress={this.state.progress}
       />
     );
