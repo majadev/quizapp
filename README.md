@@ -9,3 +9,5 @@ Type 'yarn add .'
 Type 'yarn start'.
 
 Open expo on your mobile device and scan the QR-code that appears in your cmd.
+
+Try and use the app with TalkBack.
